@@ -19,7 +19,7 @@ const QrCodeScanner = () => {
           const cameraId = devices[0].id;
           const qrCode = new Html5Qrcode(id);
           setHtml5QrCode(qrCode);
-          await qrCode.start(cameraId, {
+          await qrCode.start({facingMode:"environment"}, {
             fps: 2,
             qrbox: { width: 250, height: 250 },
           }, (decodedText, decodedResult) => {
