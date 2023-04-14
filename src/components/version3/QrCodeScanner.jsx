@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Html5Qrcode } from "html5-qrcode";
 import ScanResults from "./ScanResults";
 import sound from "../../../src/assets/mp3/sound-effect.mp3";
+import { fetchQrData } from "../../services/api";
 
 
 const QrCodeScanner = () => {
@@ -23,15 +24,25 @@ const QrCodeScanner = () => {
           await qrCode.start({facingMode:"environment"}, {
             fps: 2,
             qrbox: { width: 250, height: 250 },
-          }, (decodedText, decodedResult) => {
+          }, async (decodedText, decodedResult) => {
             console.log(decodedText);
             // for the table to display the scanned results
             const soundEffect = new Audio(sound);
             soundEffect.play();
-            setDecodedResults((prevResults) => [
-                ...prevResults,
-                decodedText,
-              ]);
+            // setDecodedResults((prevResults) => [
+            //     ...prevResults,
+            //     decodedText,
+            //   ]);
+            try {
+                const data = await fetchQrData("1234567890");
+                setDecodedResults((prevResults) => [
+                  ...prevResults,
+                  data,
+                ]);
+                console.log(data);
+              } catch (err) {
+                console.log(err);
+              }
           });
         }
       } catch (err) {
