@@ -22,8 +22,9 @@ const QrCodeScanner = () => {
           setHtml5QrCode(qrCode);
           await qrCode.clear();
           await qrCode.start({facingMode:"environment"}, {
-            fps: 2,
-            qrbox: { width: 250, height: 250 },
+            fps: 50,
+            qrbox: { width: 350, height: 350 },
+            aspectRatio:0.8,
           }, async (decodedText, decodedResult) => {
             console.log(decodedText);
             // for the table to display the scanned results
@@ -34,7 +35,7 @@ const QrCodeScanner = () => {
             //     decodedText,
             //   ]);
             try {
-                const data = await fetchQrData("1234567890");
+                const data = await fetchQrData("4234567890");
                 setDecodedResults((prevResults) => [
                   ...prevResults,
                   data,
@@ -75,7 +76,7 @@ const QrCodeScanner = () => {
   };
 
   return (
-    <div className="d-flex justify-content-center flex-column">
+    <div className="d-flex justify-content-center flex-column m-auto" style={{maxWidth:"400px"}}>
       <div id={id} className=" col-sm mb-2"></div>
       {showStopButton && <button className="btn btn-primary" onClick={handleStopScanning}>Stop Scanning</button>}
       {/* <button className="btn btn-primary" onClick={handleStopScanning}>Stop Scanning</button> */}

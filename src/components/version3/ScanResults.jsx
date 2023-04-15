@@ -17,7 +17,7 @@ const ScanResults = ({data}) => {
       <tbody className='table-striped'>
         {
         data.map((result, index) =>{ 
-            total += result.price;
+            total += parseFloat(result.price);
         return (
         <tr key={index}>
             <td>{index+1}</td>

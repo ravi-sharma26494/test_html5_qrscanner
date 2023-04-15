@@ -1,7 +1,7 @@
-export const APP_BACKEND_URL = process.env.APP_BACKEND_URL;
+// export const APP_BACKEND_URL = process.env.APP_BACKEND_URL;
 
 export const fetchQrData = async (qrcode) => {
-  const response = await fetch(`${APP_BACKEND_URL}/products//${qrcode}`);
+  const response = await fetch(`http://localhost:3001/products//${qrcode}`);
   if (!response.ok) {
     throw new Error("Failed to fetch product data");
   }
