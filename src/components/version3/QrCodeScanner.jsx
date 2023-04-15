@@ -33,7 +33,7 @@ const QrCodeScanner = () => {
           await qrCode.start({facingMode:"environment"}, {
             fps: 15,
             qrbox: qrboxFunction,
-            aspectRatio:1.777778,
+            aspectRatio:1.333334,
           }, async (decodedText, decodedResult) => {
             console.log(decodedText);
             // for the table to display the scanned results
