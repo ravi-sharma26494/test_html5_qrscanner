@@ -15,6 +15,15 @@ const QrCodeScanner = () => {
   useEffect(() => {
     const startScanning = async () => {
       try {
+        let qrboxFunction = function(viewfinderWidth, viewfinderHeight) {
+          let minEdgePercentage = 0.7; // 70%
+          let minEdgeSize = Math.min(viewfinderWidth, viewfinderHeight);
+          let qrboxSize = Math.floor(minEdgeSize * minEdgePercentage);
+          return {
+              width: qrboxSize,
+              height: qrboxSize
+          };
+      }
         const devices = await Html5Qrcode.getCameras();
         if (devices && devices.length) {
           const cameraId = devices[0].id;
@@ -23,7 +32,7 @@ const QrCodeScanner = () => {
           await qrCode.clear();
           await qrCode.start({facingMode:"environment"}, {
             fps: 15,
-            qrbox: { width: 350, height: 350 },
+            qrbox: qrboxFunction,
             aspectRatio:1.777778,
           }, async (decodedText, decodedResult) => {
             console.log(decodedText);
