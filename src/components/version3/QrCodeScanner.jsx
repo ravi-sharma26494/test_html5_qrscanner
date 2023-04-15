@@ -22,7 +22,7 @@ const QrCodeScanner = () => {
           setHtml5QrCode(qrCode);
           await qrCode.clear();
           await qrCode.start({facingMode:"environment"}, {
-            fps: 50,
+            fps: 15,
             qrbox: { width: 350, height: 350 },
             aspectRatio:0.5,
           }, async (decodedText, decodedResult) => {
