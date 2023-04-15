@@ -24,7 +24,7 @@ const QrCodeScanner = () => {
           await qrCode.start({facingMode:"environment"}, {
             fps: 15,
             qrbox: { width: 350, height: 350 },
-            aspectRatio:0.5,
+            aspectRatio:1.777778,
           }, async (decodedText, decodedResult) => {
             console.log(decodedText);
             // for the table to display the scanned results
