@@ -6,6 +6,7 @@ const useZxing = ({
     audio: false,
     video: {
       facingMode: 'environment',
+      zoom:{min:1, max:3}
     },
   },
   hints,
