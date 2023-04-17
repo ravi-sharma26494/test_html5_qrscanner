@@ -1,18 +1,24 @@
-/* Scanner.css */
+.scanner-container {
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
 
-.scanner {
+  .scanner {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
   }
-  
-  .video-container {
+
+  .scanner-target {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    border: 2px solid white;
+    border-radius: 5px;
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.5);
   }
-  

@@ -6,14 +6,14 @@ import Scanner from "./components/version4/Scanner";
 const App = () => {
   return (
     <div className="App">
-      <div className="container-fluid">
-        {/* <div className="row"> */}
+      <div className="container-sm border border-primary rounded p-2">
+        <div className="row">
         
             {/* <QrCodeScanner /> */}
             <Scanner />
   
         
-        {/* </div> */}
+        </div>
       </div>
       
     </div>
