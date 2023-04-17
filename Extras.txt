@@ -1,0 +1,6 @@
+3. How to Fetch Dev.to Articles for Your Portfolio
+URL: https://dev.to/zodiapps/how-to-scan-barcodes-in-your-reactjs-application-2668
+Integrate the articles of your Dev.to profile into your personal portfolio
+ with either React, Vue, or Next.js by following these simple steps. 
+ It outlines how to include frontend to pull the information and correctly utilizes the Dev.to API: 
+ How to Fetch Your Dev.to Articles for Your Portfolio with React

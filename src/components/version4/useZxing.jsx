@@ -7,9 +7,10 @@ const useZxing = ({
     video: {
       facingMode: 'environment',
     },
+    advanced:[{zoom: 2}]
   },
   hints,
-  timeBetweenDecodingAttempts = 300,
+  timeBetweenDecodingAttempts = 100,
   onResult = () => {},
   onError = () => {},
 } = {}) => {

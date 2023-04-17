@@ -9,7 +9,10 @@ const Scanner = () => {
 
   return (
     <>
-      <video ref={ref} />
+      <div className="scanner-container">
+        <video className="scanner" ref={ref} />
+        <div className="scanner-target" />
+      </div>
       {scannedResult && <p>Scanned result: {scannedResult}</p>}
     </>
   );
