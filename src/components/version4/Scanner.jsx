@@ -1,5 +1,5 @@
 import useZxing from "./useZxing";
-
+import "./Scanner.css"
 const Scanner = () => {
   const { ref, scannedResult } = useZxing({
     onResult: (result) => {
